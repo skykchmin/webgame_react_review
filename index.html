@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+
+</head>
+<body>
+    <div id="root"></div> <!-- 결과: <div id="root"><button>Like</button></div> -->
+        <script>
+            const e = React.createElement;
+
+            class LikeButton extends React.Component{
+                constructor(props){ // 
+                    super(props);
+                }
+                
+                render(){ // 태그를 만들어주는 함수, 화면을 어떻게 보여줄 것인지
+                    return e('button', null, 'Like'); // <button>Like</button>을 만들겠다! 만드는게 아님.
+                }
+            }
+        </script>
+        <script>
+            ReactDOM.render(e(LikeButton), document.querySelector('#root')); // 만들었던것을 그린다네
+        </script>
+    
+    
+</body>
+</html>

@@ -1,4 +1,5 @@
 const path = require('path'); // 노드에서 쉽게 경로 조작
+const webpack = require('webpack')
 
 module.exports = {
     name: 'wordrelay-setting',
@@ -31,11 +32,12 @@ module.exports = {
         }],
     },
     plugins: [
-        
+        new webpack.LoaderOptionsPlugin({debug: true}),
     ], // 확장프로그램
 
     output:{ // 출력
+        filename: 'app.js',
         path: path.join(__dirname, 'dist'),
-        filename: 'app.js'
+        
     },
 };

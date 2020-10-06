@@ -21,13 +21,16 @@ module.exports = {
                 presets: [
                     ['@babel/preset-env', {
                     targets: {
-                        browsers: [' >5% in KR', 'last 2 chrome versions'],
+                        browsers: [' > 1% in KR', 'last 2 chrome versions'],
                     },
                     debug: true,
                 }],
                     '@babel/preset-react',
             ],
-                plugins: ['@babel/plugin-proposal-class-properties'],
+                plugins: [
+                    '@babel/plugin-proposal-class-properties',
+                    'react-hot-loader/babel'
+                ],
             },
         }],
     },
@@ -36,8 +39,10 @@ module.exports = {
     ], // 확장프로그램
 
     output:{ // 출력
-        filename: 'app.js',
         path: path.join(__dirname, 'dist'),
+        filename: 'app.js',
+        publicPath: '/dist/'
+        
         
     },
 };

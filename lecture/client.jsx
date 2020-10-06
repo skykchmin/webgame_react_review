@@ -1,6 +1,9 @@
 const React = require('react');
 const ReactDom = require('react-dom');
+const { hot } = require('react-hot-loader/root');
 
-const GuGuDan = require('./GuGuDan');
+const Wordrelay = require('./Wordrelay');
 
-ReactDom.render(<GuGuDan />, document.querySelector('#root'));
+const Hot = hot(Wordrelay); // 수정사항이 있을때 반영
+
+ReactDom.render(<Hot />, document.querySelector('#root'));

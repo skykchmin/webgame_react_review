@@ -41,8 +41,7 @@ module.exports = {
     output:{ // 출력
         path: path.join(__dirname, 'dist'),
         filename: 'app.js',
-        publicPath: '/dist/'
-        
+        publicPath: '/dist/',
         
     },
 };

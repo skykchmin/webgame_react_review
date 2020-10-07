@@ -1,9 +1,9 @@
-const React = require('react');
-const ReactDom = require('react-dom');
-const { hot } = require('react-hot-loader/root');
+import React  from 'react' ;
+import ReactDom from 'react-dom';
+import { hot } from 'react-hot-loader/root';
 
-const Wordrelay = require('./Wordrelay');
+import NumberBaseball from './NumberBaseball';
 
-const Hot = hot(Wordrelay); // 수정사항이 있을때 반영
+const Hot = hot(NumberBaseball); // hoc
 
 ReactDom.render(<Hot />, document.querySelector('#root'));

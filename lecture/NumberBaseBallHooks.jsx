@@ -10,6 +10,27 @@ function getNumbers() { // 숫자 4개를 겹치지 않고 랜덤하게 뽑는 �
     }
     return array;
 }
+const NumberBaseball = () => {
+
+    return(
+        <>
+            <h1>{this.state.result}</h1>
+            <form onSubmit={this.onSubmitForm}>
+                <input maxLength={4} value={this.state.value} onChange={this.onChangeInput} /> 
+                {/* value와 onchange는 set */}
+            </form>
+            <div>시도: {this.state.tries.length}</div>
+            <ul>
+                {this.state.tries.map((v, i)=>{
+                    return(
+                        <Try key={`${i + 1}차 시도: `} tryInfo={v}/>    
+                    );
+                })}
+            </ul>
+        </>
+    );
+    
+} 
 
 class NumberBaseball extends Component{
     state = {

@@ -1,4 +1,22 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
+
+const ResponseCheck = () => {
+    const [state, setState] = useState('waiting');
+    const [message, setMessage] = useState('클릭해서 시작하세요');
+    const [result, setResult] = useState([]);
+
+    const onClickScreen = () => {
+
+    };
+
+    const onReset = () => {
+        setResult([];)
+    };
+
+    return(
+
+    );
+};
 
 class ResponseCheck extends Component{
     state = {

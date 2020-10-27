@@ -72,7 +72,7 @@ const ResponseCheck = () => {
             }
         })()}
 
-        {renderAverage()}
+        {/* {renderAverage()} */}
     </>
     );
 };

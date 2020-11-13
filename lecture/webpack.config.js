@@ -1,5 +1,6 @@
 const path = require('path'); // 노드에서 쉽게 경로 조작
 const webpack = require('webpack')
+const RefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
 
 module.exports = {
     name: 'wordrelay-setting',
@@ -29,13 +30,14 @@ module.exports = {
             ],
                 plugins: [
                     '@babel/plugin-proposal-class-properties',
-                    'react-hot-loader/babel'
+                    'react-refresh/babel', 
                 ],
             },
         }],
     },
     plugins: [
-        new webpack.LoaderOptionsPlugin({debug: true}),
+        new RefreshWebpackPlugin()
+        // new webpack.LoaderOptionsPlugin({debug: true}), // 디버그 처리
     ], // 확장프로그램
 
     output:{ // 출력
@@ -44,4 +46,8 @@ module.exports = {
         publicPath: '/dist/',
         
     },
+    devServer: {
+        publicPath: '/dist/',
+        hot: true,
+    }, //프론트엔드 개발 편의를 위한 서버
 };
